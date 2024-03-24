@@ -35,14 +35,12 @@ Example:
 
 **Prompt:** `js get current date in this format: mm/dd/yyyy` (23 tokens with overhead)
 
-**Reponse:** `javascript
+**Reponse:**
+```javascript
 const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
-
 console.log(currentDate);
-
 const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
-
-console.log(currentDate);` (40 tokens)
+console.log(currentDate);``` (40 tokens)
 
 The total cost of the above Q&A is:
 
