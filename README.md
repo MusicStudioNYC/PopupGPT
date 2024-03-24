@@ -57,3 +57,6 @@ In short, you don't have to worry about cost.
 
 ## Memory (or the lack thereof)
 Note that this isn't a chat, there's no memory of what you typed before. Every question you ask is like the first time you met. If you need a chat conversation experience, use the regular chat.openai.com.
+
+## Build
+If you want to build an EXE from the AHK source code, you can use teh Ahk2Exe.exe include GUI tool.
