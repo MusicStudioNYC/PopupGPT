@@ -42,7 +42,9 @@ const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', d
 console.log(currentDate);` (40 tokens)
 
 The total cost of the above Q&A is:
+
 **GPT-3.5:** $0.0000715 (with **1 cent**, you can run such a Q&A **140 times**. With your $5 credit, you can ask such a Q&A **69,930 times**.) 
+
 **GPT-4:** $0.00143 (with **1 cent**, you can run such a Q&A **7 times**. With your $5 credit, you can ask such a Q&A **3,496** times.) 
 In short, you don't have to worry about cost.
 
