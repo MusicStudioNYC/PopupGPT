@@ -1,7 +1,7 @@
 # PopupGPT
 Instant ChatGPT mini popup via hotkey, for Windows (AHK)
 
-![Screenshot](https://github.com/MusicStudioNYC/PopupGPT/assets/53878072/741d3854-c392-4557-9b62-07b6c0bbae55)
+<img src="[https://github.com/favicon.ico](https://github.com/MusicStudioNYC/PopupGPT/assets/53878072/741d3854-c392-4557-9b62-07b6c0bbae55)" width="200">
 
 ## Setup
 1. Download and run the EXE file (or alternatively, the AHK file, if you have AutoHotKey installed).
