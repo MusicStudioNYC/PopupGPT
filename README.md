@@ -1,7 +1,8 @@
 # PopupGPT
 Instant ChatGPT mini popup via hotkey, for Windows (AHK)
 
-<img src="[https://github.com/favicon.ico](https://github.com/MusicStudioNYC/PopupGPT/assets/53878072/741d3854-c392-4557-9b62-07b6c0bbae55)" width="200">
+<img src="https://github.com/MusicStudioNYC/PopupGPT/assets/53878072/741d3854-c392-4557-9b62-07b6c0bbae55" width="350">
+
 
 ## Setup
 1. Download and run the EXE file (or alternatively, the AHK file, if you have AutoHotKey installed).
@@ -36,7 +37,7 @@ The cost for the GPT 3.5 (turbo-0125) and even the more expensive GPT-4 (0125-pr
 
 Example:
 
-**Prompt:** `js get current date in this format: mm/dd/yyyy` (23 tokens with overhead)
+**Prompt:** `js get current date in this format: mm/dd/yyyy` _(23 tokens with overhead)_
 
 **Reponse:**
 ```javascript
@@ -45,7 +46,7 @@ console.log(currentDate);
 const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
 console.log(currentDate);
 ```
-(40 tokens)
+_(40 tokens)_
 
 The total cost of the above Q&A is:
 
