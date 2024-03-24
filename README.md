@@ -6,6 +6,7 @@ Instant ChatGPT mini popup via hotkey, for Windows (AHK)
 2. Paste your OpenAI API key (only needs to be once, then it's stored locally on your computer in the registry.
 
 If you don't know how to find your API key, see here:
+
 [![How to generate an API key](http://img.youtube.com/vi/nafDyRsVnXU/0.jpg)](http://www.youtube.com/watch?v=nafDyRsVnXU)
 
 3. Add the EXE file (or a shortcut to it) inside your system startup folder if you want it to automatically start with your computer without needing to run the file after every system restart.
@@ -33,6 +34,7 @@ The cost for the GPT 3.5 (turbo-0125) and even the more expensive GPT-4 (0125-pr
 Example:
 
 **Prompt:** `js get current date in this format: mm/dd/yyyy` (23 tokens with overhead)
+
 **Reponse:** `javascript
 const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
 console.log(currentDate);
