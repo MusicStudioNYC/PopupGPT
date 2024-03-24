@@ -55,5 +55,5 @@ The total cost of the above Q&A is:
 **GPT-4:** $0.00143 (with **1 cent**, you can run such a Q&A **7 times**. With your $5 credit, you can ask such a Q&A **3,496** times.) 
 In short, you don't have to worry about cost.
 
-## Memomry (or the lack thereof)
+## Memory (or the lack thereof)
 Note that this isn't a chat, there's no memory of what you typed before. Every question you ask is like the first time you met. If you need a chat conversation experience, use the regular chat.openai.com.
