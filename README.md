@@ -31,9 +31,9 @@ Once the app is running, here's how to enjoy it:
 Your prompts and API keys do not pass through our servers or anything like that. You API key is stored locally on your computer in the system registry, then all calls to GPT are made directly to the OpenAI API endpoint (https://api.openai.com/v1/chat/completions)
 
 ## Cost
-OpenAI gives you free $5 credit to use with your API. Those $5 should be enough to last you nearly forever if you only use this app for short Q&A's. For longer Q&A's, like essay generation, it is recommended to use the regular chat.openai.com for several benefits. The purpose of this app is meant for quick and concise on-the-spot answers.
+OpenAI gives you free $5 credit to use with your API. Those $5 should be enough to last you nearly forever if you only use this app for short Q&A's. For longer Q&A's, like essay generation, it is recommended to use the regular chat.openai.com for several benefits. The purpose of this app is meant for quick and concise on-the-fly answers.
 
-The cost for the GPT 3.5 (turbo-0125) and even the more expensive GPT-4 (0125-preview) are both so minimal that you don't really have to worry about the cost. 
+The cost for the GPT 3.5 (turbo-0125) and even the more expensive GPT-4 (0125-preview) are both so minimal that you don't really have to worry about the cost. Instead, choose GPT-3.5 for faster response, but use GPT-4 if you require a better answer from this more advanced model (but honestly, it's happened before that 3.5 gave a better answer than 4!)
 
 Example:
 
