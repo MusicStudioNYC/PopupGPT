@@ -1,7 +1,7 @@
 ## Running the app straight from the source code
 If you have AutoHotKey v1 installed on your computer, you can simply run the AHK directly without needing to compile it first to EXE.
 
-If you don't have AutoHotKey, your only option is to compile to an EXE (or to trust the EXE that I compiled in the root).
+If you don't have AutoHotKey, your only option is to compile the AHK source code to an EXE (or to trust the EXE that I compiled in the root).
 
 ## How to build your own EXE from the source code
 1. Download the AHK file (that's the source code) and optionally the icon (icon.ico)
