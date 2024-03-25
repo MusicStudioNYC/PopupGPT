@@ -37,16 +37,13 @@ The cost for the GPT 3.5 (turbo-0125) and even the more expensive GPT-4 (0125-pr
 
 Example:
 
-**Prompt:** `js get current date in this format: mm/dd/yyyy` _(23 tokens with overhead)_
+**Prompt:** `js get current date in this format: mm/dd/yyyy`
 
 **Reponse:**
 ```javascript
 const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
 console.log(currentDate);
-const currentDate = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
-console.log(currentDate);
 ```
-_(40 tokens)_
 
 The total cost of the above Q&A is:
 
