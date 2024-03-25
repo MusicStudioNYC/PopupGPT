@@ -5,7 +5,7 @@ Instant ChatGPT mini popup via hotkey, for Windows (AHK)
 
 
 ## Setup
-1. Download and run the EXE file (or alternatively, the AHK file, if you have AutoHotKey installed).
+1. Download and run the EXE file (or alternatively, the "AHK" file from the "src" directory, if you have [AutoHotKey](https://www.autohotkey.com/) v1 installed).
 2. Paste your OpenAI API key (only needs to be done once, then it's stored locally on your computer in the system registry).
 
 If you don't know how to find your API key, see here:
