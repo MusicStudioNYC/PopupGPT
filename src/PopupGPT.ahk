@@ -1,8 +1,6 @@
-﻿#NoEnv
+#NoEnv
 #SingleInstance force
-SendMode Input
-SetWorkingDir %A_ScriptDir%
-FileEncoding , UTF-8
+FileEncoding , UTF-8-RAW
 
 ; Comment out the next line if compiling to EXE, instead use Ahk2Exe.exe GUI to add custom icon
 ;Menu, Tray, Icon, icon.ico
@@ -34,7 +32,7 @@ ShowGPTPopup:
     GuiControl,, Output,  ; Clear the output field
     Gui, Show, , PopupGPT  ; Show the GUI
     GuiControl, Focus, vInput  ; Focus on the input field
-return
+Return
 
 ; Hotkeys for executing and copy should only exist if window is active
 #IfWinActive, PopupGPT
@@ -44,28 +42,30 @@ return
     !x::ExitApp
 #IfWinActive
 
-return
+Return
 
 SetApi:
     InputBox, apiKey, API Key, Please enter your OpenAI API Key, ,,,,,,,%apiKey%
     RegWrite, REG_SZ, HKEY_CURRENT_USER, Software\PopupGPT, APIKey, %apiKey%
-return
+Return
 
 Answer35:
     model := "gpt-3.5-turbo-0125"
     Gosub, Answer
-return
+Return
 
 Answer4:
     model := "gpt-4-0125-preview"
     Gosub, Answer
-return
+Return
 
 Answer:
 Gui, Submit, NoHide
 
 InputPrompt := Input
+; Escape special characters in user input
 InputPrompt := StrReplace(InputPrompt, "`n", "\n")
+InputPrompt := StrReplace(InputPrompt, """", "\""") ; Escape double quotes for JSON
 If InputPrompt = ; Prompt is empty...
     {
         MsgBox Please type your prompt in the top, big white box
@@ -73,13 +73,24 @@ If InputPrompt = ; Prompt is empty...
     }
 GuiControl,, Output, Thinking...
 
-curlCommand := "curl ""https://api.openai.com/v1/chat/completions"" -H ""Content-Type: application/json; charset=utf-8"" -H ""Authorization: Bearer " . apiKey . """ -d ""{\""model\"": \""" . model . "\"", \""messages\"": [{\""role\"": \""user\"", \""content\"": \""Answer this question brief and to the point, no intros: " . InputPrompt . "\""}]}"""
+; Prepare JSON payload and save to a temporary file
+JsonPayload := "{""model"": """ . model . """, ""messages"": [{""role"": ""user"", ""content"": """ . InputPrompt . """}]}"
+TempJsonFile := A_Temp . "\PopupGPT_Payload.json"
+
+; Write JSON to the file with UTF-8 encoding
+FileDelete, %TempJsonFile% ; Ensure the file does not already exist
+FileAppend, %JsonPayload%, %TempJsonFile%, UTF-8-RAW
 TempFile := A_Temp . "\PopupGPT_Response.txt"
+
+; Modify the curl command to read from the file
+curlCommand := "curl ""https://api.openai.com/v1/chat/completions"" -H ""Content-Type: application/json; charset=utf-8"" -H ""Authorization: Bearer " . apiKey . """ --data-binary @""" . TempJsonFile . """"
+
+; Execute the curl command
 RunWait, %ComSpec% /c %curlCommand% > %TempFile%,, Hide UseErrorLevel
 if ErrorLevel
     {
         MsgBox, There was an error running the cURL command: %ErrorLevel%
-        return
+        Return
     }
 
 FileRead, OutputVar, %TempFile%
@@ -88,7 +99,7 @@ FileDelete, %TempFile%
 if ErrorLevel
 {
     MsgBox, There was an error with the response: %ErrorLevel%
-    return
+    Return
 }
 
 ; TODO: Upgrade to actual JSON parsing
@@ -103,16 +114,16 @@ gptOutput := StrReplace(gptOutput, "\""", """") ; Escape (") correctly
 gptOutput := StrReplace(gptOutput, "```", "")  ; Remove backticks around code.
 
 GuiControl,, Output, %gptOutput%
-return
+Return
 
 CopyOutput:
 GuiControlGet, CurrentOutput,, Output
 Clipboard := CurrentOutput
-return
+Return
 
 GuiClose:
     Gui, Hide  ; Hide the GUI instead of exiting
-return
+Return
 
 ExitSub: 
   ExitApp 
