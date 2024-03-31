@@ -17,6 +17,7 @@ Gui, Add, Edit, vInput w400 h200
 Gui, Add, Button, gAnswer35, GPT 3.5 (CTRL+Enter)
 Gui, Add, Button, gAnswer4, GPT 4 (SHIFT+ENTER)
 Gui, Add, Button, gSetApi, Set API Key
+Gui, Add, Checkbox, vShortAnswerChecked Checked, Short Answer
 Gui, Add, Edit, vOutput w400 h200 ReadOnly
 Gui, Add, Button, gCopyOutput, Copy (ALT+C) 
 
@@ -63,6 +64,11 @@ Answer:
 Gui, Submit, NoHide
 
 InputPrompt := Input
+GuiControlGet, ShortAnswerChecked,, ShortAnswerChecked
+if (ShortAnswerChecked = "1")
+{
+    InputPrompt .= "`nShortest answer"
+}
 ; Escape special characters in user input
 InputPrompt := StrReplace(InputPrompt, "`n", "\n")
 InputPrompt := StrReplace(InputPrompt, """", "\""") ; Escape double quotes for JSON
