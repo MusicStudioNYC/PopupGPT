@@ -20,7 +20,7 @@ The file only needs to run once (either by manually running it, or adding it to 
 Once the app is running, here's how to enjoy it:
 
 ## Usage
-1. Use hotkey **CTRL+`** (backtick is found to the left of "1") to show the dialog (and reset its contents).
+1. Use hotkey **ALT+`** (backtick is found to the left of "1") to show the dialog (and reset its contents).
 2. Once the dialog is visible, type your prompt (e.g. "I'm too _ to come to tonight's meeting (5 options)").
 3. Execute the call to GPT.
   a. For GPT 3.5 (faster and cheaper) press **CTRL+Enter** (or press the on-screen button).
